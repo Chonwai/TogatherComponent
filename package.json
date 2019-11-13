@@ -1,86 +1,85 @@
 {
-  "name": "togather-component",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "vue-svg-loader": "^0.12.0"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.1.0",
-    "@types/mocha": "^5.2.4",
-    "@vue/cli-plugin-babel": "^3.12.0",
-    "@vue/cli-plugin-eslint": "^3.12.0",
-    "@vue/cli-plugin-typescript": "^3.12.0",
-    "@vue/cli-plugin-unit-mocha": "^3.12.0",
-    "@vue/cli-service": "^3.12.0",
-    "@vue/eslint-config-prettier": "^5.0.0",
-    "@vue/eslint-config-typescript": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.1.2",
-    "eslint": "^5.16.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "lint-staged": "^8.1.5",
-    "prettier": "^1.18.2",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "typescript": "^3.4.3",
-    "vue-cli-plugin-svg-loader": "^1.1.0",
-    "vue-cli-plugin-tailwind": "^1.1.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "togather-component",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "test:unit": "vue-cli-service test:unit",
+        "lint": "vue-cli-service lint",
+        "prettier": "prettier --write \"src/**/*.js\" \"src/**/*.vue\" \"src/**/*.ts\""
     },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/prettier",
-      "@vue/typescript"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
+    "dependencies": {
+        "core-js": "^2.6.5",
+        "vue": "^2.6.10",
+        "vue-svg-loader": "^0.12.0"
     },
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)"
-        ],
+    "devDependencies": {
+        "@types/chai": "^4.1.0",
+        "@types/mocha": "^5.2.4",
+        "@vue/cli-plugin-babel": "^3.12.0",
+        "@vue/cli-plugin-eslint": "^3.12.0",
+        "@vue/cli-plugin-typescript": "^3.12.0",
+        "@vue/cli-plugin-unit-mocha": "^3.12.0",
+        "@vue/cli-service": "^3.12.0",
+        "@vue/eslint-config-prettier": "^5.0.0",
+        "@vue/eslint-config-typescript": "^4.0.0",
+        "@vue/test-utils": "1.0.0-beta.29",
+        "babel-eslint": "^10.0.1",
+        "chai": "^4.1.2",
+        "eslint": "^5.16.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "lint-staged": "^8.1.5",
+        "prettier": "^1.19.1",
+        "sass": "^1.19.0",
+        "sass-loader": "^8.0.0",
+        "typescript": "^3.4.3",
+        "vue-cli-plugin-svg-loader": "^1.1.0",
+        "vue-cli-plugin-tailwind": "^1.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
         "env": {
-          "mocha": true
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "@vue/prettier",
+            "@vue/typescript"
+        ],
+        "rules": {},
+        "parserOptions": {
+            "parser": "@typescript-eslint/parser"
+        },
+        "overrides": [{
+            "files": [
+                "**/__tests__/*.{j,t}s?(x)"
+            ],
+            "env": {
+                "mocha": true
+            }
+        }]
+    },
+    "postcss": {
+        "plugins": {
+            "tailwindcss": {},
+            "vue-cli-plugin-tailwind/purgecss": {},
+            "autoprefixer": {}
         }
-      }
-    ]
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {},
-      "vue-cli-plugin-tailwind/purgecss": {},
-      "autoprefixer": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,vue,ts}": [
+            "vue-cli-service lint",
+            "git add"
+        ]
     }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,vue,ts}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
 }
